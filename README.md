@@ -1,64 +1,62 @@
-# Nano FIAP: Gestão de Produtos
+# FIAP Project: Java Product Manager
 
-Projeto de aplicação console-based (utilizando Swing para diálogos) para gerenciamento de produtos e categorias. Este sistema foi desenvolvido como projeto de conclusão para o curso de Java da FIAP.
+A console-based application (utilizing Java Swing for dialogs) for managing products and categories. This system was developed as a final project for the Java course at FIAP.
 
-A aplicação permite realizar operações básicas de CRUD (Criar, Ler, Atualizar) para produtos, associando-os a categorias, com todos os dados persistidos em memória durante a execução.
+The application allows users to perform basic CRUD (Create, Read, Update) operations for products, associating them with categories. All data is persisted in-memory during execution.
 
-## 🚀 Funcionalidades Principais
+## 🚀 Key Features
 
-  * ✅ **Cadastro de Categorias**: Adicionar novas categorias de produtos.
-  * 📦 **Cadastro de Produtos**: Adicionar novos produtos e associá-los a uma categoria existente.
-  * ✏️ **Alteração de Produtos**: Modificar dados de um produto já cadastrado.
-  * 🔎 **Consulta de Produtos por ID**: Buscar um produto específico pelo seu identificador.
-  * 🗂️ **Consulta de Produtos por Categoria**: Listar todos os produtos pertencentes a uma categoria selecionada.
-  * 🚪 **Encerrar**: Sair da aplicação.
+  * ✅ **Category Registration**: Add new product categories.
+  * 📦 **Product Registration**: Add new products and link them to an existing category.
+  * ✏️ **Product Update**: Modify data of an already registered product.
+  * 🔎 **Find Product by ID**: Search for a specific product using its unique identifier.
+  * 🗂️ **List Products by Category**: Display all products belonging to a selected category.
+  * 🚪 **Exit**: Safely close the application.
 
-## 💻 Tecnologias Utilizadas
+## 💻 Technologies Used
 
-  * **Java**: O projeto utiliza Java (configurado no `pom.xml` para compilar na versão 14).
-  * **Maven**: Usado para o gerenciamento de dependências e build do projeto.
-  * **Java Swing (`JOptionPane`)**: A interface com o usuário é totalmente baseada em caixas de diálogo do Swing, sem a necessidade de uma GUI complexa.
+  * **Java**: The project is built with Java (configured in `pom.xml` to compile using version 14).
+  * **Maven**: Used for dependency management and project building.
+  * **Java Swing (`JOptionPane`)**: The user interface is entirely based on Swing dialog boxes, providing a straightforward interaction flow without the need for a complex GUI.
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
-O projeto segue uma arquitetura simples, separando as responsabilidades em pacotes:
+The project follows a clean architecture layout, separating responsibilities into different packages:
 
   * `br.com.fiap.produtos`
-      * `Main.java`: Ponto de entrada da aplicação, contém o loop principal do menu.
+      * `Main.java`: Application entry point; contains the main menu loop.
   * `br.com.fiap.produtos.model`
-      * `Product.java`: Entidade (POJO) que representa um produto.
-      * `Category.java`: Entidade (POJO) que representa uma categoria.
+      * `Product.java`: Entity (POJO) representing a product.
+      * `Category.java`: Entity (POJO) representing a category.
   * `br.com.fiap.produtos.repository`
-      * `ProductCollectionRepository.java`: Simula a camada de persistência para Produtos, armazenando os dados em um `Vector` estático.
-      * `CategoryCollectionRepository.java`: Simula a camada de persistência para Categorias, armazenando os dados em um `Vector` estático com dados iniciais.
+      * `ProductCollectionRepository.java`: Simulates the persistence layer for Products, storing data in a static `Vector`.
+      * `CategoryCollectionRepository.java`: Simulates the persistence layer for Categories, storing initial seeded data in a static `Vector`.
   * `br.com.fiap.produtos.view`
-      * `Opcao.java` / `OpcaoView.java`: Controlam a exibição e seleção das opções do menu principal.
-      * `ProductView.java`: Responsável por exibir formulários (`JOptionPane`) para entrada de dados do produto.
-      * `CategoryView.java`: Responsável por exibir formulários (`JOptionPane`) para entrada de dados da categoria.
+      * `Opcao.java` / `OpcaoView.java`: Controls the display and selection of main menu options.
+      * `ProductView.java`: Responsible for displaying form dialogs (`JOptionPane`) for product data entry.
+      * `CategoryView.java`: Responsible for displaying form dialogs (`JOptionPane`) for category data entry.
 
-## ▶️ Como Executar o Projeto
+## ▶️ How to Run the Project
 
-### Pré-requisitos
+### Prerequisites
 
-  * Java JDK (versão 14 ou superior).
+  * Java JDK (version 14 or higher).
   * Apache Maven.
 
-### Execução
+### Execution
 
-1.  **Abra o projeto em sua IDE favorita** (IntelliJ, Eclipse, VS Code com Java) que suporte projetos Maven.
-2.  **Sincronize as dependências do Maven.**
-3.  **Localize e execute o método `main`** na classe `br.com.fiap.produtos.Main.java`.
+1. **Open the project in your favorite IDE** (IntelliJ, Eclipse, VS Code with Java extension) that supports Maven projects.
+2. **Synchronize Maven dependencies.**
+3. **Locate and run the `main` method** inside the `br.com.fiap.produtos.Main.java` class.
 
-**Alternativamente, via linha de comando:**
+**Alternatively, via Command Line Interface (CLI):**
 
-1.  Navegue até a pasta raiz do projeto (onde o `pom.xml` está localizado).
-2.  Compile o projeto:
-    ```bash
-    mvn clean compile
-    ```
-3.  Execute o projeto:
-    ```bash
-    mvn exec:java -Dexec.mainClass="br.com.fiap.produtos.Main"
-    ```
-
------
+1. Navigate to the project's root folder (where the `pom.xml` is located).
+2. Compile the project:
+   ```bash
+   mvn clean compile
+   ```
+3. Run the application:
+   ```bash
+   mvn exec:java -Dexec.mainClass="br.com.fiap.produtos.Main"
+   ```
